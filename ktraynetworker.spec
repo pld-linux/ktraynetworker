@@ -8,20 +8,20 @@ License:	GPL
 Source0:	http://www.xiaprojects.com/www/downloads/files/%{name}-%{version}.tar.bz2
 # Source0-md5:	b33fcabb9eb6bda391f479bb0ad50baa
 URL:		http://www.xiaprojects.com/www/prodotti/ktraynetworker/main.php
-BuildRequires:	qt-devel >= 3.3
 BuildRequires:	kdelibs-devel >= 3.2
+BuildRequires:	qt-devel >= 3.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This program will help you to view network activity on your
-netowrk device such as eth0, ppp0 and so on.
+This program will help you to view network activity on your network
+device such as eth0, ppp0 and so on.
 
 %description -l pl
-Ten program pomo¿e Ci obserwowaæ aktywno¶æ sieciow± urz±dzenia
-takiego jak eth0, ppp0 i tak dalej.
+Ten program pomaga obserwowaæ aktywno¶æ sieciow± urz±dzenia takiego
+jak eth0, ppp0 itp.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 
 %build
 %configure
@@ -30,6 +30,7 @@ takiego jak eth0, ppp0 i tak dalej.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
