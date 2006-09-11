@@ -1,16 +1,18 @@
 Summary:	KDE tray icon Network activity monitor
 Summary(pl):	Ikona tacki systemowej KDE monitoruj±ca aktywno¶æ sieci
 Name:		ktraynetworker
-Version:	0.7
-Release:	2
+Version:	0.8c
+Release:	1
+%define		_res_ver	0.2
 Group:		X11/Applications
 License:	GPL
-Source0:	http://www.xiaprojects.com/www/downloads/files/%{name}-%{version}.tar.bz2
-# Source0-md5:	b33fcabb9eb6bda391f479bb0ad50baa
-Patch0:		%{name}-po.patch
+Source0:	http://www.xiaprojects.com/www/downloads/files/ktraynetworker/%{name}-%{version}.tar.bz2
+# Source0-md5:	b0e14fac9bcb0f5a33588a9c9386fea7
+Source1:	http://www.xiaprojects.com/www/downloads/files/ktraynetworker/%{name}_resources_%{_res_ver}.tar.bz2
+# Source1-md5:	021d5529af23dd5607129982184688b7
 URL:		http://www.xiaprojects.com/www/prodotti/ktraynetworker/main.php
 BuildRequires:	automake
-BuildRequires:	kdelibs-devel >= 3.2
+BuildRequires:	kdelibs-devel >= 3.3
 BuildRequires:	qt-devel >= 3.3
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -25,7 +27,9 @@ jak eth0, ppp0 itp.
 
 %prep
 %setup -q
-%patch0 -p1
+tar xjf %{SOURCE1}
+mkdir themes
+tar xjf %{name}_resources_%{_res_ver}/themes.tar.bz2 -C themes
 
 %build
 cp -f /usr/share/automake/config.* admin
@@ -36,6 +40,9 @@ kde_htmldir="%{_kdedocdir}"; export kde_htmldir
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
+install -d $RPM_BUILD_ROOT%{_datadir}/apps/%{name}/themes
+cp -R themes  $RPM_BUILD_ROOT%{_datadir}/apps/%{name}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
