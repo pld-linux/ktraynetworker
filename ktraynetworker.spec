@@ -1,5 +1,5 @@
 Summary:	KDE tray icon Network activity monitor
-Summary(pl):	Ikona tacki systemowej KDE monitoruj±ca aktywno¶æ sieci
+Summary(pl.UTF-8):   Ikona tacki systemowej KDE monitorujÄ…ca aktywnoÅ›Ä‡ sieci
 Name:		ktraynetworker
 Version:	0.8c
 Release:	1
@@ -21,8 +21,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This program will help you to view network activity on your network
 device such as eth0, ppp0 and so on.
 
-%description -l pl
-Ten program pomaga obserwowaæ aktywno¶æ sieciow± urz±dzenia takiego
+%description -l pl.UTF-8
+Ten program pomaga obserwowaÄ‡ aktywnoÅ›Ä‡ sieciowÄ… urzÄ…dzenia takiego
 jak eth0, ppp0 itp.
 
 %prep
