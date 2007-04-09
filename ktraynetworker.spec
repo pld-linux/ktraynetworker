@@ -13,7 +13,7 @@ Source1:	http://www.xiaprojects.com/www/downloads/files/ktraynetworker/%{name}_r
 URL:		http://www.xiaprojects.com/www/prodotti/ktraynetworker/main.php
 BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 3.3
-BuildRequires:	qt-devel >= 3.3
+BuildRequires:	qt-devel >= 6:3.3
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
