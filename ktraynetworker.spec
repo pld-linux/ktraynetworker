@@ -2,7 +2,7 @@ Summary:	KDE tray icon Network activity monitor
 Summary(pl.UTF-8):	Ikona tacki systemowej KDE monitorująca aktywność sieci
 Name:		ktraynetworker
 Version:	0.8c
-Release:	1
+Release:	2
 %define		_res_ver	0.2
 Group:		X11/Applications
 License:	GPL
